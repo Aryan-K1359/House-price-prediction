@@ -51,7 +51,7 @@ Data Preprocessing:
 
 
 3. Model Training:
-   The model was trained on the training data (`X_train`, `Y_train`).
+   The model was trained on the training data (X_train, Y_train).
 
 
 
