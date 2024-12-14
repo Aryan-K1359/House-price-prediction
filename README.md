@@ -103,4 +103,3 @@ Conclusion:
 - The Mean Absolute Error was 0.192 for the training data and 0.308 for the testing data, which indicates the model’s good performance in terms of prediction accuracy.
 - Further improvements could include parameter tuning, cross-validation, and exploring different machine learning models for comparison.
 
-This project demonstrated the ability of machine learning models, particularly XGBoost, to predict complex real-world data such as housing prices, with promising results.
