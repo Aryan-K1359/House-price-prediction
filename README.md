@@ -1,40 +1,106 @@
-# House Price Prediction
+Report: Predicting  Housing Prices Using XGBoost
 
-The "House Price Prediction" project focuses on predicting housing prices using machine learning techniques. By leveraging popular Python libraries such as NumPy, Pandas, Scikit-learn (sklearn), Matplotlib, Seaborn, and XGBoost, this project provides an end-to-end solution for accurate price estimation.
+---
 
-## Project Overview
+Project Overview:
 
-The "House Price Prediction" project aims to develop a model that can accurately predict housing prices based on various features. This prediction task is of great significance in real estate and finance, enabling informed decision-making for buyers, sellers, and investors. By employing machine learning algorithms and a curated dataset, this project provides a powerful tool for estimating house prices.
+The goal of this project is to predict housing prices  using a Housing Dataset. The dataset consists of multiple features such as median income, house age, and latitude/longitude, which are used to predict the median house value (price) in a district. The machine learning model chosen for this project is the XGBoost Regressor, a powerful model that excels in predictive tasks and is known for its performance and efficiency.
 
-## Key Features
+---
 
-- **Data Collection and Processing:** The project utilizes the "California Housing" dataset, which can be directly downloaded from the Scikit-learn library. The dataset contains features such as house age, number of rooms, population, and median income. Using Pandas, the data is processed and transformed to ensure it is suitable for analysis.
+Data Overview:
 
-- **Data Visualization:** The project employs data visualization techniques to gain insights into the dataset. Matplotlib and Seaborn are utilized to create visualizations such as histograms, scatter plots, and correlation matrices. These visualizations provide a deeper understanding of the relationships between features and help identify trends and patterns.
+The dataset is loaded from sklearn.datasets.fetch_california_housing() , which provides a regression dataset with the following features:
 
-- **Train-Test Split:** To evaluate the performance of the regression model, the project employs the train-test split technique. The dataset is split into training and testing subsets, ensuring that the model is trained on a portion of the data and evaluated on unseen data. This allows for an accurate assessment of the model's predictive capabilities.
+- MedInc - Median income in block group.
+- HouseAge - Median house age in block group.
+- AveRooms - Average number of rooms per household.
+- AveOccup - Average number of household members.
+- Lat - Latitude of block group.
+- Lon - Longitude of block group.
+- MedHouseVal (Price) - Target variable (Median house value for California districts).
 
-- **Regression Model using XGBoost:** The project utilizes the XGBoost algorithm, a popular gradient boosting framework, to build the regression model. XGBoost is known for its ability to handle complex relationships between features and achieve high predictive accuracy. The Scikit-learn library provides an implementation of XGBoost that is utilized in this project.
+---
 
-- **Model Evaluation:** The project assesses the performance of the regression model using evaluation metrics such as R-squared error and mean absolute error. R-squared error measures the proportion of the variance in the target variable that can be explained by the model, while mean absolute error quantifies the average difference between the predicted and actual house prices. These metrics provide insights into the model's accuracy and precision. Additionally, a scatter plot is created to visualize the predicted prices against the actual prices.
+Exploratory Data Analysis (EDA):
 
-## Getting Started
+Before building the model, we perform exploratory data analysis (EDA) to understand the relationships between the features and the target variable.
 
-To run this project locally, follow these steps:
+- Correlation Matrix:
+   A correlation matrix was constructed to understand the linear relationships between different features and the target variable. We used a heatmap for better visualization of the correlations.
 
-1. Clone the repository: `gh repo clone MYoussef885/House_Price_Prediction`
-2. Install the required libraries: `If you're using Google Colab, you don't need to pip install. Just follow the importing the dependencies section.`
-3. Launch Google Colab: `https://colab.research.google.com/`
-4. Open the `House_Price_Prediction.ipynb` file and run the notebook cells sequentially.
 
-## Conclusion
 
-The "House Price Prediction" project provides a practical solution for estimating housing prices based on various features. By leveraging data collection, preprocessing, visualization, XGBoost regression modeling, and model evaluation, this project offers a comprehensive approach to addressing the price prediction task. The project utilizes the "California Housing" dataset from Scikit-learn, ensuring a reliable and widely accessible data source.
+- Features and Target Variables:
+   We separated the features and target variable:
+   - X contains all features except the target variable (price).
+   - Y contains the target variable (price).
 
-## License
+---
 
-This project is licensed under the MIT license. See the [LICENSE](LICENSE) file for more information.
+Data Preprocessing:
 
-## Acknowledgements
+1. Train-Test Split:
+   The data was split into training and testing sets using an 80-20 split. The training set was used to train the model, while the testing set was used to evaluate its performance.
+   
 
-This project is made possible by the contributions of the open-source community and the powerful libraries it provides, including NumPy, Pandas, Scikit-learn, Matplotlib, Seaborn, and XGBoost. I extend my gratitude to the developers and maintainers of these libraries for their valuable work. In addition, the mentor Siddhardan, visit his channel here : https://www.youtube.com/@Siddhardhan
+
+2. **Model Initialization:** 
+   The **XGBoost Regressor** model was selected for this task due to its robustness and efficiency for regression problems.
+   
+
+
+3. Model Training:
+   The model was trained on the training data (`X_train`, `Y_train`).
+
+
+
+---
+
+Model Evaluation:
+
+Once the model was trained, predictions were made on both the training and testing datasets. The following performance metrics were calculated:
+
+1. **Training Data:**
+   - **R-Squared Error (Training):** Measures the proportion of variance in the dependent variable that is predictable from the independent variables.
+   
+
+   - Mean Absolute Error (Training): Measures the average magnitude of the errors in a set of predictions, without considering their direction.
+   
+
+
+   - Results:
+     - R-Squared Error (Training): 0.945
+     - Mean Absolute Error (Training): 0.192
+
+   The high R-Squared score indicates that the model fits the training data well.
+
+2. Testing Data:
+   - R-Squared Error (Testing): Evaluates how well the model generalizes to unseen data.
+   - Mean Absolute Error (Testing): Indicates the average prediction error for the test set.
+
+
+
+   - Results:
+     - R-Squared Error (Testing): 0.841
+     - Mean Absolute Error (Testing): 0.308
+
+   The model performs well on the testing data, though there is a slight reduction in performance compared to the training set. This is expected due to the model’s tendency to overfit on the training set.
+
+---
+
+Visualization:
+
+To better understand the model's performance, we visualized the actual vs predicted prices on the training data:
+
+The scatter plot shows that the predicted prices are quite close to the actual prices, indicating a good fit for the model.
+
+---
+
+Conclusion:
+
+- The XGBoost Regressor performed well in predicting California housing prices with an R-squared value of 0.945 on the training data and 0.841 on the test data.
+- The Mean Absolute Error was 0.192 for the training data and 0.308 for the testing data, which indicates the model’s good performance in terms of prediction accuracy.
+- Further improvements could include parameter tuning, cross-validation, and exploring different machine learning models for comparison.
+
+This project demonstrated the ability of machine learning models, particularly XGBoost, to predict complex real-world data such as housing prices, with promising results.
