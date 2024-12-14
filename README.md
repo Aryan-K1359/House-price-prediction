@@ -10,7 +10,7 @@ The goal of this project is to predict housing prices  using a Housing Dataset. 
 
 Data Overview:
 
-The dataset is loaded from sklearn.datasets.fetch_california_housing() , which provides a regression dataset with the following features:
+The dataset is loaded from sklearn.datasets.fetch_housing() , which provides a regression dataset with the following features:
 
 - MedInc - Median income in block group.
 - HouseAge - Median house age in block group.
@@ -18,7 +18,7 @@ The dataset is loaded from sklearn.datasets.fetch_california_housing() , which p
 - AveOccup - Average number of household members.
 - Lat - Latitude of block group.
 - Lon - Longitude of block group.
-- MedHouseVal (Price) - Target variable (Median house value for California districts).
+- MedHouseVal (Price) - Target variable (Median house value for various districts).
 
 ---
 
@@ -99,7 +99,7 @@ The scatter plot shows that the predicted prices are quite close to the actual p
 
 Conclusion:
 
-- The XGBoost Regressor performed well in predicting California housing prices with an R-squared value of 0.945 on the training data and 0.841 on the test data.
+- The XGBoost Regressor performed well in predicting housing prices with an R-squared value of 0.945 on the training data and 0.841 on the test data.
 - The Mean Absolute Error was 0.192 for the training data and 0.308 for the testing data, which indicates the model’s good performance in terms of prediction accuracy.
 - Further improvements could include parameter tuning, cross-validation, and exploring different machine learning models for comparison.
 
