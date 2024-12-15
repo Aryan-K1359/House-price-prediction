@@ -91,7 +91,7 @@ Once the model was trained, predictions were made on both the training and testi
 
 Visualization:
 
-To better understand the model's performance, we visualized the actual vs predicted prices on the training data:
+To better understand the model's performance, we visualized the actual vs predicted prices on the training data.
 
 The scatter plot (not depicted here) shows that the predicted prices are quite close to the actual prices, indicating a good fit for the model.
 
