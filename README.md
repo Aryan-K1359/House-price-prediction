@@ -93,7 +93,7 @@ Visualization:
 
 To better understand the model's performance, we visualized the actual vs predicted prices on the training data:
 
-The scatter plot shows that the predicted prices are quite close to the actual prices, indicating a good fit for the model.
+The scatter plot (not depicted here) shows that the predicted prices are quite close to the actual prices, indicating a good fit for the model.
 
 ---
 
